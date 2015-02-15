@@ -1,6 +1,7 @@
 ﻿namespace Allberg.ChangePictureName.Lib
 {
     using System.Collections.Generic;
+    using System.IO;
 
     public class PicFolderHolder
     {
@@ -23,6 +24,12 @@
 
         void picFolder_OnFoundPicture(string path)
         {
+            var filename = Path.GetFileName(path);
+            if (filename == null || filename.StartsWith("."))
+            {
+                return;
+            }
+
             this.Pictures.Add(path);
         }
     }

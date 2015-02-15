@@ -15,8 +15,16 @@
 
         public void RunNow()
         {
-            Console.WriteLine("Starting to find pictures in " + this.settings.PictureFolder);
-            var picFolder = new PicFolderHolder(this.settings.PictureFolder);
+            foreach (var pictureFolder in this.settings.PictureFolders)
+            {
+                this.RunNow(pictureFolder);
+            }
+        }
+
+        public void RunNow(string inputFolder)
+        {
+            Console.WriteLine("Starting to find pictures in " + inputFolder);
+            var picFolder = new PicFolderHolder(inputFolder);
             picFolder.ScanForPictures();
 
             Console.WriteLine("Found {0} pictures.", picFolder.Pictures.Count);

@@ -1,5 +1,7 @@
 ﻿namespace Allberg.ChangePictureName.Lib
 {
+    using System.Collections.Generic;
+
     public class ProgramArguments
     {
         public ProgramArguments(string[] args)
@@ -10,11 +12,18 @@
                 return;
             }
 
-            this.PictureFolder = args[0];
+            var pictureFolders = new List<string>();
+
+            foreach (var argument in args)
+            {
+                pictureFolders.Add(argument);
+            }
+
+            this.PictureFolders = pictureFolders.ToArray();
         }
 
         public bool IsEmpty { get; private set; }
 
-        public string PictureFolder { get; private set; }
+        public string[] PictureFolders { get; private set; }
     }
 }
