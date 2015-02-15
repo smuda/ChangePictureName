@@ -39,7 +39,13 @@
 
                 if (regex.IsMatch(filename))
                 {
-                    Console.WriteLine("Checked {0} and it's alredy done.");
+                    Console.WriteLine("Checked {0} and it's alredy done.", filename);
+                    continue;
+                }
+
+                if (this.IsOnlineOnly(picturePath))
+                {
+                    Console.WriteLine("This picture isn't available offline: " + picturePath);
                     continue;
                 }
 
@@ -66,6 +72,12 @@
 
                 File.Move(picturePath, newFilename);
             }
+        }
+
+        private bool IsOnlineOnly(string picturePath)
+        {
+            var attributes = File.GetAttributes(picturePath);
+            return attributes.HasFlag(FileAttributes.Hidden) && attributes.HasFlag(FileAttributes.Archive) && attributes.HasFlag(FileAttributes.SparseFile);
         }
 
         private static string CreateFilename(DateTime takenDate)
