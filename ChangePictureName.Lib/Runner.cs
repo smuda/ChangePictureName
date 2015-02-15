@@ -43,13 +43,28 @@
                     continue;
                 }
 
+                if (!File.Exists(picturePath))
+                {
+                    continue;
+                }
+
                 if (this.IsOnlineOnly(picturePath))
                 {
                     Console.WriteLine("This picture isn't available offline: " + picturePath);
                     continue;
                 }
 
-                var picture = new PictureFile(picturePath);
+
+                PictureFile picture;
+                try
+                {
+                    picture = new PictureFile(picturePath);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine("Error while opening picture: " + exception.Message + " - " + picturePath);
+                    continue;
+                }
                 if (picture.TakenDate.Equals(DateTime.MinValue))
                 {
                     Console.WriteLine("File doesn't have a date for taking the picture: " + picturePath);
@@ -71,6 +86,7 @@
                 }
 
                 File.Move(picturePath, newFilename);
+                Console.WriteLine("Changed name from {0} to {1}", picturePath, newFilename);
             }
         }
 
