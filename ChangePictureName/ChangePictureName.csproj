@@ -7,7 +7,7 @@
     <ProjectGuid>{68C24DB9-6ACE-4BFE-9816-960E5D862057}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Allberg.ChangePictureName</RootNamespace>
+    <RootNamespace>JohnAllberg.ChangePictureName</RootNamespace>
     <AssemblyName>ChangePictureName</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

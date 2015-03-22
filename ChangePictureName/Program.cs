@@ -1,8 +1,8 @@
-﻿namespace Allberg.ChangePictureName
+﻿namespace JohnAllberg.ChangePictureName
 {
     using System;
 
-    using Allberg.ChangePictureName.Lib;
+    using JohnAllberg.ChangePictureName.Lib;
 
     public class Program
     {

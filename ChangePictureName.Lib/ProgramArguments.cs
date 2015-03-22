@@ -1,4 +1,4 @@
-﻿namespace Allberg.ChangePictureName.Lib
+﻿namespace JohnAllberg.ChangePictureName.Lib
 {
     using System.Collections.Generic;
 

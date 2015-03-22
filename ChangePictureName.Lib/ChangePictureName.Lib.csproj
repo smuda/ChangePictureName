@@ -7,7 +7,7 @@
     <ProjectGuid>{CD8F081E-28B6-40D9-9609-9988D18D97C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Allberg.ChangePictureName.Lib</RootNamespace>
+    <RootNamespace>JohnAllberg.ChangePictureName.Lib</RootNamespace>
     <AssemblyName>ChangePictureName.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
